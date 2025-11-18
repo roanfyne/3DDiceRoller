@@ -8,8 +8,8 @@ export class Teal {
     constructor() { 
 		this.offline = true;
 		this.socket = null;
-		this.socketAddress = 'dnd.majorsplace.com:32400';
-		this.socketSecure = false;
+		this.socketAddress = 'localhost:32400';
+		this.socketSecure = true;
         window.Teal = this;
     }
 

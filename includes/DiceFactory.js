@@ -79,6 +79,7 @@ export class DiceFactory {
 
 		this.systems = {
 			'd20': {id: 'd20', name: 'D20', dice:[]},
+			'd100': {id: 'd100', name: 'D100 (0~99)', dice:[]},
 			'dweird': {id: 'dweird', name: 'D-Weird', dice:[]},
 			'swrpg': {id: 'swrpg', name: 'Star Wars™ RPG', dice:[]},
 			'swarmada': {id: 'swarmada', name: 'Star Wars™ Armada', dice:[]},
@@ -113,6 +114,26 @@ export class DiceFactory {
 		diceobj.mass = 400;
 		diceobj.scale = 0.9;
 		diceobj.colorset = "coin_silver"
+		this.register(diceobj);
+
+		diceobj = new DicePreset('d00', 'd10');
+		diceobj.name = 'Ten-Sided Dice (Tens Digit), 00-indexed';
+		diceobj.setLabels(['00', '10', '20', '30', '40', '50', '60', '70', '80', '90']);
+		diceobj.setValues(0, 90, 10);
+		diceobj.mass = 350;
+		diceobj.inertia = 9;
+		diceobj.scale = 0.9;
+		diceobj.system = 'd100';
+		this.register(diceobj);
+
+		diceobj = new DicePreset('d0', 'd10');
+		diceobj.name = 'Ten-Sided Dice (Single Digit), 0-indexed';
+		diceobj.setLabels(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']);
+		diceobj.setValues(0,9);
+		diceobj.mass = 350;
+		diceobj.inertia = 9;
+		diceobj.scale = 0.9;
+		diceobj.system = 'd100';
 		this.register(diceobj);
 
 		diceobj = new DicePreset('d1', 'd6');
